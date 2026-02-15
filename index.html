@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Flappy Lakshendra</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase (COMPAT VERSION) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+  <!-- Pixel Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="loginScreen" class="login-screen">
+
+  <div class="login-title">FLAPPY LOGIN</div>
+
+  <div class="login-bird"></div>
+
+  <input type="email" id="email" placeholder="Email" />
+  <input type="password" id="password" placeholder="Password" />
+
+  <button id="loginBtn">LOGIN</button>
+  <button id="signupBtn">SIGN UP</button>
+<button id="googleLoginBtn">LOGIN WITH GOOGLE</button>
+
+</div>
+
+
+  <!-- START SCREEN -->
+  <div id="nameScreen" class="retro-start">
+    <h1 class="retro-title">
+      FLYING <span>JATT</span>
+    </h1>
+
+    <div class="retro-bird"></div>
+
+    <button id="startBtn" class="retro-btn">START</button>
+    <button id="logoutBtn" class="retro-btn">LOGOUT</button>
+
+  </div>
+
+  <!-- GAME CANVAS -->
+  <div class="game-wrapper">
+    <canvas id="gameCanvas"></canvas>
+  </div>
+
+  <!-- GAME OVER POPUP -->
+  <div id="gameOverPopup" class="gameover-overlay">
+
+    <div class="gameover-title">GAME OVER</div>
+
+    <div class="score-card">
+
+      <div class="medal-container">
+        <img id="medal" class="cat-image" src="cat/cat.jpg" alt="cat" onerror="this.style.display='none'">
+      </div>
+
+      <div class="score-info">
+        <div>SCORE</div>
+        <div id="finalScore" class="big-score">0</div>
+
+        <div>HIGH SCORE</div>
+        <div id="highScore" class="big-score">0</div>
+      </div>
+
+    </div>
+
+    <button id="restartBtn" class="play-btn">PLAY</button>
+
+    <div class="leaderboard-section">
+      <h3>Leaderboard</h3>
+      <ol id="leaderboardList"></ol>
+    </div>
+
+  </div>
+
+  <script src="game.js"></script>
+
+</body>
+</html>
